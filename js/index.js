@@ -27,7 +27,7 @@ function peticionAPI(user, password) {
         );
         if (userSearch.address.geo.lat === password) {
           setTimeout(() => {
-            window.location.href = "http://localhost:8080/APP/form.html"
+            window.location.href = "https://juancruzf.github.io/Nombres/form.html"
           }, 1500);
         } else {
           mensajeDiv.classList.remove('ocultar')
