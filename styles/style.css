@@ -1,0 +1,314 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.titulo {
+  text-align: center;
+  font-size: 2.5em;
+  color: #333;
+  margin-top: 20px;
+  font-family: "Arial", sans-serif;
+}
+
+.formulario {
+  width: 80%; /* Ocupa el 80% del ancho de la pantalla */
+  max-width: 1200px; /* Máximo ancho de 1200px */
+  margin: auto;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  position: relative;
+  padding: 20px;
+  margin-top: 40px;
+  font-family: "Arial", sans-serif;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.formulario:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+.formulario__titulo {
+  margin-bottom: 30px;
+  text-align: center;
+  font-size: 1.8em;
+  color: #555;
+  margin-top: 0;
+  font-weight: bold;
+}
+
+/* Inputs y labels */
+.formulario__input,
+.formulario__label,
+.formulario__submit {
+  display: block;
+  font-size: 1.2em;
+  max-width: 100%;
+  width: 100%;
+  font-family: "Arial", sans-serif;
+}
+
+.formulario__input {
+  padding: 22px;
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 40px;
+  background: transparent;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.formulario__label {
+  padding-left: 24px;
+  position: absolute;
+  margin-top: -85px;
+}
+
+.formulario__label {
+  padding-left: 24px;
+  position: absolute;
+  margin-top: -85;
+  z-index: -20;
+  color: rgba(0, 0, 0, 0.5);
+  transition: all 0.9s;
+}
+
+/*utilizamos la pseudoclase para la animacion ,
+cuando estoy con el elemento seleccionado osea 
+haciendo click sobre el mismo */
+.formulario__input:focus {
+  border-color: rgb(0, 110, 255);
+  outline: 1px solid rgba(0, 0, 0, 0);
+}
+
+/*el selector hermano "+" es para
+ seleccionar el nodo hermano que esta debajo */
+.formulario__input + .formulario__label {
+  /* margin-top: -135px; */
+}
+
+.formulario__submit {
+  background-color: #007bff;
+  color: white;
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2em;
+  font-family: "Arial", sans-serif;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/*esta clase la agregamos o removemos mediante el 
+codigo de javascript */
+.fijar {
+  margin-top: -128px;
+  font-size: 1em;
+  color: #007bff;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.ocultar {
+  display: none;
+}
+
+.mensaje {
+  color: #fff;
+  background-color: #e74c3c;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  margin-top: 10px;
+  text-align: center;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+}
+
+/* Estilos para la lista general */
+ul,
+ol {
+  list-style-type: disc;
+  margin: 20px;
+  padding-left: 40px;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  color: #333;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  list-style-type: none;
+}
+
+/* Estilos para los elementos de la lista */
+li {
+  margin: 8px 0;
+  padding: 5px 10px;
+  background-color: #fff;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  position: relative;
+  padding-left: 30px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 5px;
+}
+
+li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #2ecc71;
+  font-size: 18px;
+}
+
+/* Efecto al pasar el ratón sobre los elementos */
+li:hover {
+  background-color: #e6f7ff;
+  cursor: pointer;
+}
+
+li:last-child {
+  border-bottom: none;
+}
+
+ol {
+  list-style-type: decimal;
+}
+
+/* Estilos generales para ambos divs */
+#dataName,
+#dataProbability {
+  background-color: #f0f8ff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 15px;
+  margin: 10px 0;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  color: #333;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+/* Estilo específico para el div de nombre */
+#dataName {
+  background-color: #e6f7ff;
+  font-weight: bold;
+}
+
+/* Estilo específico para el div de probabilidad */
+#dataProbability {
+  background-color: #fff8dc;
+  font-style: italic;
+}
+
+#dataName::before {
+  content: "👤 ";
+  font-size: 18px;
+}
+
+#dataProbability::before {
+  content: "📊 ";
+  font-size: 18px;
+}
+
+#dataName:hover,
+#dataProbability:hover {
+  background-color: #dfefff;
+  cursor: pointer;
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+}
+
+/* Estilos responsive */
+@media (max-width: 768px) {
+  .formulario {
+    width: 80%; /* Ahora ocupa todo el ancho */
+    padding: 15px;
+  }
+
+  .formulario__input {
+    padding: 27px;
+  }
+
+  .formulario__label {
+    padding-left: 29px;
+  }
+
+  .titulo {
+    font-size: 2em;
+  }
+
+  .formulario__titulo {
+    font-size: 1.5em;
+  }
+
+  .formulario__input,
+  .formulario__label,
+  .formulario__submit {
+    font-size: 1em;
+  }
+
+  .mensaje {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  #dataName,
+  #dataProbability {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .formulario {
+    width: 80%; /* Ahora ocupa todo el ancho */
+    padding: 10px;
+  }
+
+  .formulario__label {
+    padding-left: 28px;
+  }
+
+  .formulario__input {
+    padding: 26px;
+  }
+
+  .titulo {
+    font-size: 1.8em;
+  }
+
+  .formulario__titulo {
+    font-size: 1.3em;
+  }
+
+  .formulario__input,
+  .formulario__label,
+  .formulario__submit {
+    font-size: 0.9em;
+  }
+
+  .mensaje {
+    font-size: 12px;
+    padding: 6px;
+  }
+
+  #dataName,
+  #dataProbability {
+    max-width: 95%;
+  }
+}
